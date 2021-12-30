@@ -1,12 +1,18 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
-import App from './App';
+import Game from './Game';
 import reportWebVitals from './reportWebVitals';
+import config from 'react-global-configuration';
+
+config.set({
+  blockSize: 20,
+  gameDelay: 50
+});
 
 ReactDOM.render(
   <React.StrictMode>
-    <App />
+    <Game blockSize={config.get('blockSize')}></Game>
   </React.StrictMode>,
   document.getElementById('root')
 );
